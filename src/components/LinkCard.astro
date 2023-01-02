@@ -1,0 +1,14 @@
+---
+export interface Props {
+    label: string,
+    description: string,
+    target: string
+}
+
+const {label, description, target} = Astro.props;
+---
+
+<a href={target} rel="noreferrer noopener" role="button" class="bg-slate-300 dark:bg-slate-700 rounded-lg p-4 md:p-8 ease-out duration-200 hover:drop-shadow-lg">
+    <h1 class="text-xl md:text-2xl font-bold">{label}</h1>
+    <p>{description}</p>
+</a>

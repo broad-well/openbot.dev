@@ -1,0 +1,12 @@
+---
+export interface Props {
+    fullWidth?: boolean
+}
+
+const { fullWidth } = Astro.props;
+---
+
+
+<div class={fullWidth ? "w-100 p-4" : "container mx-auto p-4"}>
+    <slot />
+</div>
