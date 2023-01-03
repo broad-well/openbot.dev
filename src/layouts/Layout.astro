@@ -1,6 +1,7 @@
 ---
-import Header from '../components/Header.astro';
-import '@fontsource/carlito';
+import Header from '../components/Header.astro'
+import '@fontsource/carlito'
+import '@fontsource/iosevka'
 
 export interface Props {
 	title: string;
@@ -31,5 +32,10 @@ const { title } = Astro.props;
 
 	.astro-code {
 		@apply p-1;
+	}
+
+	code {
+		line-height: 1.15;
+		font-family: Iosevka, Consolas, SFMono-Regular, monospace;
 	}
 </style>
