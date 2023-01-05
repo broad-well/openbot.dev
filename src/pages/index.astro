@@ -25,6 +25,8 @@ import ReferenceItem from '../components/ReferenceItem.astro';
 				<div class="basis-1/5 ref-panel">
 					<h1 class="text-xl font-semibold">Terms</h1>
 					{Object.values(referenceSheet.terms.entries).map(entry => <ReferenceItem {...entry} />)}
+					<h1 class="mt-4 text-xl font-semibold">Queries</h1>
+					{Object.values(referenceSheet.queries.entries).map(entry => <ReferenceItem {...entry} />)}
 				</div>
 				<div class="basis-2/5 ref-panel">
 					<h1 class="text-xl font-semibold">Outputs</h1>

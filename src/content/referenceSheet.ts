@@ -97,6 +97,27 @@ mod.menu('Menu item label', ApplicationCommandType.Message, {
   },
   queries: {
     title: "Queries",
+    entries: {
+      allGuildMembers: {
+        title: 'All guild members',
+        subtitle: 'List all the members and their profiles in a guild',
+        code: `const guild = await mod.client.guilds.resolve('1028759256750633062')!
+const members = await guild.members.list({limit: 1000})
+// members is a Collection<Snowflake, GuildMember>`,
+        intents: ['GuildMembers']
+      },
+      memberRoles: {
+        title: 'Guild member & roles',
+        subtitle: 'List all the roles held by a guild member',
+        code: `const guild = await mod.client.guilds.resolve('1028759256750633062')!
+const member = await guild.members.fetch({user: '135824500603224064'})
+// member.roles.cache is a Collection<string, Role>`,
+        links: {
+          'Docs': 'https://discord.js.org/#/docs/discord.js/main/class/GuildMemberRoleManager'
+        },
+        intents: ['GuildMembers']
+      }
+    }
   },
   output: {
     title: "Output",
