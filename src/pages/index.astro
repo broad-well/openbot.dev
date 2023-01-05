@@ -4,7 +4,6 @@ import Container from '../components/Container.astro';
 import shortcuts from '../content/shortcuts';
 import LinkCard from '../components/LinkCard.astro';
 import referenceSheet from '../content/referenceSheet';
-import Code from "astro/components/Code.astro";
 import ReferenceItem from '../components/ReferenceItem.astro';
 
 ---
@@ -17,18 +16,18 @@ import ReferenceItem from '../components/ReferenceItem.astro';
 			</div>
 		</Container>
 		<Container fullWidth={true}>
-			<div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_2fr] gap-2">
-				<div class="basis-2/5 ref-panel">
+			<div class="grid md:grid-cols-[38%_24%_38%] gap-2">
+				<div class="ref-panel">
 					<h1 class="text-xl font-semibold">Inputs</h1>
 					{Object.values(referenceSheet.input.entries).map(entry => <ReferenceItem {...entry} />)}
 				</div>
-				<div class="basis-1/5 ref-panel">
+				<div class="ref-panel">
 					<h1 class="text-xl font-semibold">Terms</h1>
 					{Object.values(referenceSheet.terms.entries).map(entry => <ReferenceItem {...entry} />)}
 					<h1 class="mt-4 text-xl font-semibold">Queries</h1>
 					{Object.values(referenceSheet.queries.entries).map(entry => <ReferenceItem {...entry} />)}
 				</div>
-				<div class="basis-2/5 ref-panel">
+				<div class="ref-panel">
 					<h1 class="text-xl font-semibold">Outputs</h1>
 					{Object.values(referenceSheet.output.entries).map(entry => <ReferenceItem {...entry} />)}
 				</div>
