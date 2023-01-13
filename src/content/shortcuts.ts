@@ -12,6 +12,11 @@ export default {
     Typedoc: {
         label: 'Cordette TypeDoc',
         description: 'Detailed documentation of the classes and methods provided by the module library',
-        target: 'https://cordette.openbot.dev'
+        target: 'https://openbot.dev/cordette'
+    },
+    Discordjs: {
+        label: 'Discord.js Guide',
+        description: 'Guide to using Discord.js, the underlying library supporting all interactions with Discord',
+        target: 'https://discordjs.guide'
     }
 }

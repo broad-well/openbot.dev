@@ -117,8 +117,24 @@ const member = await guild.members.fetch({user: '135824500603224064'})
         },
         intents: ['GuildMembers']
       },
-      // resolve user by ID or discriminator
-      // resolve channel by ID/name
+      resolveUser: {
+        title: 'Resolve user',
+        subtitle: 'Get a User by ID for DMs',
+        code: `const user = await mod.client.users.fetch('135824500603224064')
+// then, IF you want to DM them
+await user.send('sliding into your DMs ;)')`
+      },
+      resolveChannel: {
+        title: 'Resolve channel',
+        subtitle: 'Get a channel by ID',
+        code: `const chan = await host.client.channels.fetch('1005324615503073360')
+// then, IF you want to send something, reassure the type system that it's a text channel
+if (chan?.isTextBased()) {
+  await chan.send('this is the channel!')
+  // IF you want to read the channel's history (requires the MessageContent privileged intent)
+  const history = await chan.messages.fetch({limit: 100})
+}`
+      }
     }
   },
   output: {
@@ -193,8 +209,19 @@ const member = await guild.members.fetch({user: '135824500603224064'})
   modal.addComponents(firstRow)
   await intx.showModal(modal)
 }`
+      },
+      assignRoles: {
+        title: 'Roles',
+        subtitle: 'Add or remove a GuildMember role',
+        code: `async (intx: CommandInteraction) => {
+  if (intx.member !== null) {
+    // find the role ID in server settings, then ADD
+    await intx.member.roles?.add('1028749978870493234')
+    // OR remove
+    await intx.member.roles?.remove('1028749978870493234')
+  }
+}`
       }
-      // assign roles
     }
   },
 };
