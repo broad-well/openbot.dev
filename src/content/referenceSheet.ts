@@ -116,7 +116,9 @@ const member = await guild.members.fetch({user: '135824500603224064'})
           'Docs': 'https://discord.js.org/#/docs/discord.js/main/class/GuildMemberRoleManager'
         },
         intents: ['GuildMembers']
-      }
+      },
+      // resolve user by ID or discriminator
+      // resolve channel by ID/name
     }
   },
   output: {
@@ -192,6 +194,7 @@ const member = await guild.members.fetch({user: '135824500603224064'})
   await intx.showModal(modal)
 }`
       }
+      // assign roles
     }
   },
 };
