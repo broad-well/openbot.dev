@@ -171,15 +171,12 @@ if (chan?.isTextBased()) {
         },
         code: `async (intx: ChatInputCommandInteraction) => {
   // Display a button "✅ Agree" under the message
-  const buttons = new ActionRowBuilder<ButtonBuilder>({
-    components: [{
-      type: ComponentType.Button,
-      customId: 'custom-agree',
-      label: 'Agree',
-      emoji: '✅',
-      style: ButtonStyle.Primary
-    }]
-  })
+  const buttons = new ActionRowBuilder<ButtonBuilder>()
+    .addComponents(new ButtonBuilder()
+      .setCustomId('agree')
+      .setLabel('Agree')
+      .setStyle(ButtonStyle.Primary)
+      .setEmoji('✅'))
   await intx.reply({
     // Build and preview embeds at https://discohook.org
     embeds: [{
