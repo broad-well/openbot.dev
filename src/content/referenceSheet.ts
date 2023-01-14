@@ -14,7 +14,7 @@ mod.once(Events.ClientReady, event => console.log('module started!'))`,
         subtitle:
           "Build a chat input command and validate/fulfill interactions",
         code: `mod.command('ping', 'Get a response from the bot',
-            intx => await intx.reply('pong!'))
+            async intx => await intx.reply('pong!'))
 // Fully customized:
 mod.command('quote', 'Short description', {
   build(builder) {
