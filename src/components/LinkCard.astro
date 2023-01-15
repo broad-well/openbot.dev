@@ -8,7 +8,7 @@ export interface Props {
 const {label, description, target} = Astro.props;
 ---
 
-<a href={target} rel="noreferrer noopener" role="button" class="bg-slate-300 dark:bg-slate-700 rounded-lg p-4 md:p-8 ease-out duration-100 hover:drop-shadow-lg basis-1/4">
-    <h1 class="text-xl md:text-2xl font-bold">{label} &rarr;</h1>
+<a href={target} rel="noreferrer noopener" role="button" class="bg-slate-300 dark:bg-slate-700 rounded-lg p-4 ease-out duration-100 hover:drop-shadow-lg">
+    <h1 class="text-xl font-bold">{label} &rarr;</h1>
     <p>{description}</p>
 </a>
