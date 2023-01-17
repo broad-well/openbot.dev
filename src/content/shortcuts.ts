@@ -2,7 +2,7 @@ export default {
     Codespaces: {
         label: 'Codespaces',
         description: 'Your fully configured development environment for this workshop',
-        target: 'https://github.dev/broad-well/openbot-workshop'
+        target: 'https://github.com/codespaces/new?machine=basicLinux32gb&repo=588632909&ref=main&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=EastUs'
     },
     GitLab: {
         label: 'GitLab',

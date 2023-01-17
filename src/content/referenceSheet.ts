@@ -13,10 +13,10 @@ mod.once(Events.ClientReady, event => console.log('module started!'))`,
         title: "Slash commands",
         subtitle:
           "Build a chat input command and validate/fulfill interactions",
-        code: `mod.command('ping', 'Get a response from the bot',
+        code: `mod.slash('ping', 'Get a response from the bot',
             intx => await intx.reply('pong!'))
 // Fully customized:
-mod.command('quote', 'Short description', {
+mod.slash('quote', 'Short description', {
   build(builder) {
     return builder
       .addStringOption((opt) => opt
