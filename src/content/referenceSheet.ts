@@ -13,10 +13,10 @@ mod.once(Events.ClientReady, event => console.log('module started!'))`,
         title: "Slash commands",
         subtitle:
           "Build a chat input command and validate/fulfill interactions",
-        code: `mod.command('ping', 'Get a response from the bot',
+        code: `mod.slash('ping', 'Get a response from the bot',
             async intx => await intx.reply('pong!'))
 // Fully customized:
-mod.command('quote', 'Short description', {
+mod.slash('quote', 'Short description', {
   build(builder) {
     return builder
       .addStringOption((opt) => opt
@@ -171,15 +171,12 @@ if (chan?.isTextBased()) {
         },
         code: `async (intx: ChatInputCommandInteraction) => {
   // Display a button "✅ Agree" under the message
-  const buttons = new ActionRowBuilder<ButtonBuilder>({
-    components: [{
-      type: ComponentType.Button,
-      customId: 'custom-agree',
-      label: 'Agree',
-      emoji: '✅',
-      style: ButtonStyle.Primary
-    }]
-  })
+  const buttons = new ActionRowBuilder<ButtonBuilder>()
+    .addComponents(new ButtonBuilder()
+      .setCustomId('agree')
+      .setLabel('Agree')
+      .setStyle(ButtonStyle.Primary)
+      .setEmoji('✅'))
   await intx.reply({
     // Build and preview embeds at https://discohook.org
     embeds: [{
